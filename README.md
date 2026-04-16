@@ -1,75 +1,55 @@
-Agricultural Crop Production Analysis (FAOSTAT EDA)
+ Agricultural Crop Production — Exploratory Data Analysis
 
-Project Overview
-This project performs an Exploratory Data Analysis (EDA) on global agricultural crop production data sourced from FAOSTAT.  
-The goal is to understand long-term production trends for major crops and analyze how production has evolved over time across decades.
+## Overview
+A complete exploratory data analysis (EDA) of global crop production data from the FAO (Food and Agriculture Organization of the United Nations), covering wheat, corn, and soybean production across 180+ countries from 2000 to 2023.
 
----
+## What this project does
+- Loads and inspects raw FAO production data
+- Cleans and standardizes the dataset (missing values, data types, filtering)
+- Generates 5 publication-quality charts
+- Summarizes key findings with statistics
 
- Objectives
-- Clean and preprocess FAOSTAT crop production data
-- Analyze production trends over time
-- Compare key crops (Wheat, Maize, Soya beans)
-- Visualize global agricultural patterns
-- Generate insights from real-world agricultural data
+## Charts produced
+| Chart | Description |
+|-------|-------------|
+| `01_global_trend.png` | Global production trends over time for all 3 crops |
+| `02_top10_countries.png` | Top 10 countries by total production |
+| `03_crop_comparison.png` | Total production comparison across the 3 crops |
+| `04_heatmap.png` | Year-by-country production heatmap |
+| `05_decade_comparison.png` | Average production by decade |
 
----
+## Key findings
+- Maize (corn) is the most produced crop globally by volume
+- China and the United States consistently dominate production
+- Global soybean production grew significantly after 2010
+- The 2010s decade saw the highest average production across all crops
 
-Dataset
-- **Source:** FAOSTAT (Food and Agriculture Organization of the United Nations)
-- **Content:** Crop production statistics by country, year, and crop type
-- **Key variables:**
-  - Country
-  - Crop
-  - Year
-  - Element (Production / Area harvested)
-  - Value (metric tons)
+## How to run
 
----
+### 1. Install dependencies
+```bash
+pip install pandas matplotlib seaborn
+```
 
-Tools & Libraries
-- Python 🐍
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
+### 2. Get the data
+1. Go to [FAOSTAT](https://www.fao.org/faostat/en/#data/QCL)
+2. Select: Crops → All countries → Wheat, Maize, Soybeans → 2000–2023
+3. Download as CSV
+4. Save as `FAOSTAT_crops.csv` in the same folder as the script
 
----
+### 3. Run the script
+```bash
+python crop_production_eda.py
+```
 
- Data Processing Steps
-- Removed missing values
-- Standardized column names
-- Filtered relevant crops:
-  - Wheat
-  - Maize (corn)
-  - Soya beans
-- Selected production-related data
-- Aggregated data by year and crop
-- Created decade-based analysis
+Charts will be saved in the `charts/` folder.
 
----
+## Tools used
+- Python 3.x
+- Pandas — data loading, cleaning, aggregation
+- Matplotlib — chart creation
+- Seaborn — statistical visualizations
 
-Key Analyses Performed
-- Global crop production trends over time
-- Yearly production comparison between crops
-- Decade-based production analysis
-- Crop-wise distribution and growth patterns
-
----
-
- Visualizations
-The project includes:
-- Line chart: Global production trends (2000–2023)
-- Comparative bar charts across decades
-- Crop-wise production evolution over time
-
-All charts are saved in the `charts/` folder.
-
----
-
-Key Insights
-- Maize shows strong and consistent production growth over time
-- Wheat remains relatively stable compared to other crops
-- Soya beans production shows significant growth in recent decades
-- Global production patterns vary significantly by crop type and time period
-
+## Dataset source
+FAO — Food and Agriculture Organization of the United Nations  
+[https://www.fao.org/faostat/en/#data/QCL](https://www.fao.org/faostat/en/#data/QCL)  
